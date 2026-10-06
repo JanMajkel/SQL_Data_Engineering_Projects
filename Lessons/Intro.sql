@@ -40,3 +40,22 @@ HAVING COUNT(jpf.*) > 3000
 ORDER BY posting_count DESC
 LIMIT 10;
 
+SELECT
+    CAST(job_id AS VARCHAR) || '-' || CAST(company_id AS VARCHAR),
+    CAST(job_work_from_home AS INT) AS job_work_from_home,
+    CAST(job_posted_date AS DATE) AS job_posted_date,
+    CAST(salary_year_avg AS DECIMAL(10, 0)) AS salary_year_avg
+FROM
+    job_postings_fact
+WHERE salary_year_avg IS NOT NULL
+LIMIT 10;
+
+SELECT
+    job_id:: VARCHAR || '-' || company_id:: VARCHAR,
+    job_work_from_home:: INT AS job_work_from_home,
+    job_posted_date:: DATE AS job_posted_date,
+    salary_year_avg:: DECIMAL(10, 0) AS salary_year_avg
+FROM
+    job_postings_fact
+WHERE salary_year_avg IS NOT NULL
+LIMIT 10;
