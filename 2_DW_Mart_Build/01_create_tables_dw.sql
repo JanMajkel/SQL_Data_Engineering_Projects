@@ -24,7 +24,7 @@ CREATE TABLE job_postings_fact (
     job_location VARCHAR,
     job_via VARCHAR,
     job_schedule_type VARCHAR,
-    job_work_from_home VARCHAR,
+    job_work_from_home BOOLEAN,
     search_location VARCHAR,
     job_posted_date TIMESTAMP,
     job_no_degree_mention BOOLEAN, 
